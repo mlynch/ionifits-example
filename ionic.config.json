@@ -1,0 +1,7 @@
+{
+  "name": "MyHR10",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
