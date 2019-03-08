@@ -1,0 +1,164 @@
+type Person {
+  id: ID!
+  name: String!
+  jobTitle: String
+  profileImage: String
+}
+
+type Message {
+  id: ID!
+  title: String!
+  contents: String
+  created: String
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelPersonConnection {
+  items: [Person]
+  nextToken: String
+}
+
+input ModelStringFilterInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+}
+
+input ModelIDFilterInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+}
+
+input ModelIntFilterInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  contains: Int
+  notContains: Int
+  between: [Int]
+}
+
+input ModelFloatFilterInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  contains: Float
+  notContains: Float
+  between: [Float]
+}
+
+input ModelBooleanFilterInput {
+  ne: Boolean
+  eq: Boolean
+}
+
+input ModelPersonFilterInput {
+  id: ModelIDFilterInput
+  name: ModelStringFilterInput
+  jobTitle: ModelStringFilterInput
+  profileImage: ModelStringFilterInput
+  and: [ModelPersonFilterInput]
+  or: [ModelPersonFilterInput]
+  not: ModelPersonFilterInput
+}
+
+type Query {
+  getPerson(id: ID!): Person
+  listPersons(filter: ModelPersonFilterInput, limit: Int, nextToken: String): ModelPersonConnection
+  getMessage(id: ID!): Message
+  listMessages(filter: ModelMessageFilterInput, limit: Int, nextToken: String): ModelMessageConnection
+}
+
+input CreatePersonInput {
+  id: ID
+  name: String!
+  jobTitle: String
+  profileImage: String
+}
+
+input UpdatePersonInput {
+  id: ID!
+  name: String
+  jobTitle: String
+  profileImage: String
+}
+
+input DeletePersonInput {
+  id: ID
+}
+
+type Mutation {
+  createPerson(input: CreatePersonInput!): Person
+  updatePerson(input: UpdatePersonInput!): Person
+  deletePerson(input: DeletePersonInput!): Person
+  createMessage(input: CreateMessageInput!): Message
+  updateMessage(input: UpdateMessageInput!): Message
+  deleteMessage(input: DeleteMessageInput!): Message
+}
+
+type Subscription {
+  onCreatePerson: Person @aws_subscribe(mutations: ["createPerson"])
+  onUpdatePerson: Person @aws_subscribe(mutations: ["updatePerson"])
+  onDeletePerson: Person @aws_subscribe(mutations: ["deletePerson"])
+  onCreateMessage: Message @aws_subscribe(mutations: ["createMessage"])
+  onUpdateMessage: Message @aws_subscribe(mutations: ["updateMessage"])
+  onDeleteMessage: Message @aws_subscribe(mutations: ["deleteMessage"])
+}
+
+type ModelMessageConnection {
+  items: [Message]
+  nextToken: String
+}
+
+input ModelMessageFilterInput {
+  id: ModelIDFilterInput
+  title: ModelStringFilterInput
+  contents: ModelStringFilterInput
+  created: ModelStringFilterInput
+  and: [ModelMessageFilterInput]
+  or: [ModelMessageFilterInput]
+  not: ModelMessageFilterInput
+}
+
+input CreateMessageInput {
+  id: ID
+  title: String!
+  contents: String
+  created: String
+}
+
+input UpdateMessageInput {
+  id: ID!
+  title: String
+  contents: String
+  created: String
+}
+
+input DeleteMessageInput {
+  id: ID
+}

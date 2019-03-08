@@ -1,0 +1,13 @@
+type Person @model {
+  id: ID!
+  name: String!
+  jobTitle: String
+  profileImage: String
+}
+
+type Message @model {
+  id: ID!
+  title: String!
+  contents: String
+  created: String
+}

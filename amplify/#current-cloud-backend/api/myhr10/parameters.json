@@ -1,0 +1,13 @@
+{
+    "AppSyncApiName": "myhr10",
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authcognito457fa7db",
+            "Outputs.UserPoolId"
+        ]
+    },
+    "schemaGraphql": "s3://myhr10-20181128145250-deployment/amplify-appsync-files/schema.graphql.1543446476478",
+    "ResolverBucket": "myhr10-20181128145250-deployment",
+    "ResolverRootKey": "amplify-appsync-files",
+    "DeploymentTimestamp": "1543446476478"
+}

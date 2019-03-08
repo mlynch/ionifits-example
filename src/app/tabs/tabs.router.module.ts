@@ -2,9 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { TabsPage } from './tabs.page';
-import { HomePage } from '../home/home.page';
-import { AboutPage } from '../about/about.page';
-import { ContactPage } from '../contact/contact.page';
+import { PeoplePage } from '../people/people.page';
+import { MessagesPage } from '../messages/messages.page';
+import { ExpensesPage } from '../expenses/expenses.page';
+import { TimeOffPage } from '../time-off/time-off.page';
+import { SettingsPage } from '../settings/settings.page';
 
 const routes: Routes = [
   {
@@ -13,29 +15,39 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: '/tabs/(home:home)',
+        redirectTo: '/app/tabs/(people:people)',
         pathMatch: 'full',
       },
       {
-        path: 'home',
-        outlet: 'home',
-        component: HomePage
+        path: 'people',
+        outlet: 'people',
+        component: PeoplePage
       },
       {
-        path: 'about',
-        outlet: 'about',
-        component: AboutPage
+        path: 'expenses',
+        outlet: 'expenses',
+        component: ExpensesPage
       },
       {
-        path: 'contact',
-        outlet: 'contact',
-        component: ContactPage
-      }
+        path: 'messages',
+        outlet: 'messages',
+        component: MessagesPage
+      },
+      {
+        path: 'time-off',
+        outlet: 'time-off',
+        component: TimeOffPage
+      },
+      {
+        path: 'settings',
+        outlet: 'settings',
+        component: SettingsPage
+      },
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/(home:home)',
+    redirectTo: '/app/tabs/(people:people)',
     pathMatch: 'full'
   }
 ];
@@ -45,3 +57,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class TabsPageRoutingModule {}
+

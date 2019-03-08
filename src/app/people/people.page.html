@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>People</ion-title>
+    
+    <ion-buttons slot="end">
+      <ion-button (click)="getNewPerson()">
+        <ion-icon slot="icon-only" name="add" lazy="false"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list slot *ngIf="people">
+    <ion-item *ngFor="let person of people.items">
+      <ion-avatar slot="start">
+        <img [src]="getProfileImage(person.profileImage)">
+      </ion-avatar>
+      
+      <ion-label>
+        <h2>
+          {{person.name}}
+        </h2>
+        <p slot>
+          {{person.jobTitle}}
+        </p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+

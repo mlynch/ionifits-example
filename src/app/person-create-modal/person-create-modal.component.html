@@ -1,0 +1,34 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>Add Person</ion-title>
+
+      <ion-buttons slot="start">
+        <ion-button (click)="cancel()">
+          Cancel
+        </ion-button>
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-button (click)="save()">
+          Save
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list lines="true">
+      
+      <!--
+      <amplify-photo-picker framework="ionic" (picked)="onImagePicked($event)">
+      </amplify-photo-picker>
+    -->
+      
+      <ion-item>
+        <ion-label color="primary">Name </ion-label>
+        <ion-input placeholder="Name" [(ngModel)]="person.name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary">Job Title </ion-label>
+        <ion-input placeholder="Job title" [(ngModel)]="person.jobTitle"></ion-input>
+      </ion-item>
+    </ion-list>
+  </ion-content>

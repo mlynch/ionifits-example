@@ -1,0 +1,20 @@
+{
+    "projectName": "myhr10",
+    "projectPath": "/Users/max/apps/myhr10",
+    "defaultEditor": "code",
+    "frontendHandler": {
+        "javascript": "/usr/local/lib/node_modules/@aws-amplify/cli/node_modules/amplify-frontend-javascript"
+    },
+    "javascript": {
+        "framework": "ionic",
+        "config": {
+            "SourceDir": "src",
+            "DistributionDir": "www",
+            "BuildCommand": "npm run-script build",
+            "StartCommand": "ionic serve"
+        }
+    },
+    "providers": {
+        "awscloudformation": "/usr/local/lib/node_modules/@aws-amplify/cli/node_modules/amplify-provider-awscloudformation"
+    }
+}

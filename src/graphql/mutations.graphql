@@ -1,0 +1,49 @@
+# this is an auto generated file. This will be overwritten
+mutation CreatePerson($input: CreatePersonInput!) {
+  createPerson(input: $input) {
+    id
+    name
+    jobTitle
+    profileImage
+  }
+}
+mutation UpdatePerson($input: UpdatePersonInput!) {
+  updatePerson(input: $input) {
+    id
+    name
+    jobTitle
+    profileImage
+  }
+}
+mutation DeletePerson($input: DeletePersonInput!) {
+  deletePerson(input: $input) {
+    id
+    name
+    jobTitle
+    profileImage
+  }
+}
+mutation CreateMessage($input: CreateMessageInput!) {
+  createMessage(input: $input) {
+    id
+    title
+    contents
+    created
+  }
+}
+mutation UpdateMessage($input: UpdateMessageInput!) {
+  updateMessage(input: $input) {
+    id
+    title
+    contents
+    created
+  }
+}
+mutation DeleteMessage($input: DeleteMessageInput!) {
+  deleteMessage(input: $input) {
+    id
+    title
+    contents
+    created
+  }
+}

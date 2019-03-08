@@ -7,9 +7,11 @@ import { FormsModule } from '@angular/forms';
 import { TabsPageRoutingModule } from './tabs.router.module';
 
 import { TabsPage } from './tabs.page';
-import { ContactPageModule } from '../contact/contact.module';
-import { AboutPageModule } from '../about/about.module';
-import { HomePageModule } from '../home/home.module';
+import { PeoplePageModule } from '../people/people.module';
+import { MessagesPageModule } from '../messages/messages.module';
+import { ExpensesPageModule } from '../expenses/expenses.module';
+import { TimeOffPageModule } from '../time-off/time-off.module';
+import { SettingsPageModule } from '../settings/settings.module';
 
 @NgModule({
   imports: [
@@ -17,10 +19,13 @@ import { HomePageModule } from '../home/home.module';
     CommonModule,
     FormsModule,
     TabsPageRoutingModule,
-    HomePageModule,
-    AboutPageModule,
-    ContactPageModule
+    PeoplePageModule,
+    MessagesPageModule,
+    ExpensesPageModule,
+    TimeOffPageModule,
+    SettingsPageModule
   ],
   declarations: [TabsPage]
 })
 export class TabsPageModule {}
+

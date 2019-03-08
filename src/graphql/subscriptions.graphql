@@ -1,0 +1,49 @@
+# this is an auto generated file. This will be overwritten
+subscription OnCreatePerson {
+  onCreatePerson {
+    id
+    name
+    jobTitle
+    profileImage
+  }
+}
+subscription OnUpdatePerson {
+  onUpdatePerson {
+    id
+    name
+    jobTitle
+    profileImage
+  }
+}
+subscription OnDeletePerson {
+  onDeletePerson {
+    id
+    name
+    jobTitle
+    profileImage
+  }
+}
+subscription OnCreateMessage {
+  onCreateMessage {
+    id
+    title
+    contents
+    created
+  }
+}
+subscription OnUpdateMessage {
+  onUpdateMessage {
+    id
+    title
+    contents
+    created
+  }
+}
+subscription OnDeleteMessage {
+  onDeleteMessage {
+    id
+    title
+    contents
+    created
+  }
+}

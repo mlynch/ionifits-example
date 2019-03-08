@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Settings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="user.getUser()">
+    <span>Welcome {{user.getUser().username}}</span>
+    <div>
+      <ion-button (click)="logout()">Log out</ion-button>
+    </div>
+  </div>
+</ion-content>

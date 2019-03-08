@@ -1,0 +1,16 @@
+projects:
+  myhr10:
+    schemaPath: src/graphql/schema.json
+    includes:
+      - src/graphql/**/*.graphql
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: angular
+        generatedFileName: src/app/API.service.ts
+        docsFilePath: src/graphql
+        graphQLApiId: pjrqrsfwqjbrjpaxs2cvta4bxy
+      endpoints:
+        prod: >-
+          https://mugg6juok5ajbgqpcweslf2n4q.appsync-api.us-west-2.amazonaws.com/graphql
